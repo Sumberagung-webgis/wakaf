@@ -21,8 +21,6 @@
     <div class="section-heading">
         <h2 align="center"> PETA PERSEBARAN TANAH WAKAF KALURAHAN SUMBERAGUNG</h2>
         <div class="line-dec"></div>
-        </style>
-        <title></title>
         </div>
     </head>
     <body>
@@ -58,13 +56,16 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-7.775779666738754,110.24226810802384],[-7.762604707811928,110.2604019828977]]);
+        })
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
             map.setMaxBounds(map.getBounds());
         }
         map.createPane('pane_ESRISatelliteArcGISWorld_Imagery_0');
@@ -140,7 +141,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Celungan':
@@ -155,7 +156,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Gatak':
@@ -170,7 +171,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Gedongan':
@@ -185,7 +186,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Jowahan':
@@ -200,7 +201,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Kaliduren 1':
@@ -215,7 +216,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Kaliduren 2':
@@ -230,7 +231,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Kaliduren 3':
@@ -245,7 +246,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Kaliurang':
@@ -260,7 +261,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Karang':
@@ -275,7 +276,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Kedung Banteng':
@@ -290,7 +291,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Kruwet':
@@ -305,7 +306,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Malangan':
@@ -320,7 +321,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Mergan':
@@ -335,7 +336,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Ngento-Ento':
@@ -350,7 +351,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Nulisan':
@@ -365,7 +366,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Pajangan':
@@ -380,7 +381,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Pendulan':
@@ -395,7 +396,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Ponggok':
@@ -410,7 +411,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Pucanganom':
@@ -425,7 +426,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Sumberan':
@@ -440,7 +441,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case 'Turgenen':
@@ -455,7 +456,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(31,34,34,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
                 default:
@@ -470,7 +471,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(220,110,135,0.5)',
-                interactive: false,
+                interactive: true,
             }
                     break;
             }
@@ -480,7 +481,7 @@
         map.getPane('pane_Dukuh_1').style['mix-blend-mode'] = 'normal';
         var layer_Dukuh_1 = new L.geoJson(json_Dukuh_1, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_Dukuh_1',
             layerName: 'layer_Dukuh_1',
             pane: 'pane_Dukuh_1',
